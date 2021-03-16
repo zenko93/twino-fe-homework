@@ -6,7 +6,7 @@ API and example data provided inside project.
 ```yarn install & yarn start```
 ```npm install & npm start```
 
-Data will be served on [http://localhost:3001/suitability](http://localhost:3001/suitability) in json formart
+Data will be served on [http://localhost:3001/suitability](http://localhost:3001/suitability) in json format
 
 Mockups could be found in task folder:
 question.png - with basic question
