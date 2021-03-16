@@ -1,4 +1,4 @@
-# Twino home work #
+# TWINO home work #
 
 Please build suitability test(quiz) application using vue framework.
 API and example data provided inside project. 
@@ -18,7 +18,7 @@ overview.png - filled quiz overview
 * Display error when no answer selected
 * User can navigate back and forward between questions
 * Show overview when quiz is filled
-* Quiz is splitted into question groups and progress bar should display visual progress and also complition percentage of whole quiz
+* Quiz is splitted into question groups and progress bar should display visual progress and also completion percentage of whole quiz
 
 ### What we expect
 
