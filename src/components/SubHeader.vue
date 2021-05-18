@@ -2,11 +2,11 @@
   <div>
     <div class="flex mb-3">
       <progress-bar
-          v-for="(group, index) in groups"
-          :key="group.fieldName"
-          :width="getGroupProgressBarWidth(group)"
-          :bgColor="index <= numberOfGroup"
-          class="mr-2"
+        v-for="(group, index) in groups"
+        :key="group.fieldName"
+        :width="getGroupProgressBarWidth(group)"
+        :bgColor="index <= numberOfGroup"
+        class="mr-2"
       />
     </div>
     <div v-if="!isShowSubHeader" class="flex items-center justify-between">
@@ -25,36 +25,37 @@ export default {
   props: {
     numberOfGroup: {
       type: Number,
-      default: 0
+      default: 0,
     },
     title: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
   data() {
     return {
       groups: this.$store.state.data,
       answers: this.$store.state.answers,
-    }
+    };
   },
   computed: {
     isShowSubHeader() {
-      return ['overview'].includes(this.$route.name);
+      return ["overview"].includes(this.$route.name);
     },
     titleCapitalize() {
-      return `${this.title.charAt(0).toLocaleUpperCase()}${this.title.slice(1)}`;
-    }
+      return `${this.title.charAt(0).toLocaleUpperCase()}${this.title.slice(
+        1
+      )}`;
+    },
   },
   methods: {
     getGroupProgressBarWidth(group) {
       const answeredQuestions = group.questions
-          .map(question => this.answers[group.fieldName][question.fieldName])
-          .filter(answer => answer)
-          .length
+        .map((question) => this.answers[group.fieldName][question.fieldName])
+        .filter((answer) => answer).length;
 
-      return ((answeredQuestions * 100)/group.questions.length).toFixed(0);
-    }
-  }
-}
+      return ((answeredQuestions * 100) / group.questions.length).toFixed(0);
+    },
+  },
+};
 </script>

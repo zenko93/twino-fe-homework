@@ -1,21 +1,23 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from "vue";
+import Router from "vue-router";
 
 Vue.use(Router);
 
 const router = new Router({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      path: '/',
+      path: "/",
       props: true,
-      component: () => import(/* webpackChunkName: "entry" */ './pages/Questions'),
+      component: () =>
+        import(/* webpackChunkName: "entry" */ "./pages/Questions"),
     },
     {
-      path: '/overview',
+      path: "/overview",
       props: true,
-      name: 'overview',
-      component: () => import(/* webpackChunkName: "entry" */ './pages/SuitabilityTest'),
+      name: "overview",
+      component: () =>
+        import(/* webpackChunkName: "entry" */ "./pages/SuitabilityTest"),
     },
   ],
 });

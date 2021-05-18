@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import "@/assets/tailwind.css"
+import "@/assets/tailwind.css";
 
 export default {
-  name: 'App',
+  name: "App",
   mounted() {
-    this.$store.dispatch('getData');
+    this.$store.dispatch("getData");
   },
 };
 </script>

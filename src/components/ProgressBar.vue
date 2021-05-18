@@ -1,14 +1,14 @@
 <template>
   <div
-      class="w-full bg-gray-200 h-1 relative overflow-hidden"
-      :class="{'bg-green-100': bgColor}"
+    class="w-full bg-gray-200 h-1 relative overflow-hidden"
+    :class="{ 'bg-green-100': bgColor }"
   >
     <div
-        class="h-full progressbar"
-        :class="{'bg-green-500': bgColor }"
-        role="progressbar"
-        :style="styleBar"
-        :aria-valuenow="percentage"
+      class="h-full progressbar"
+      :class="{ 'bg-green-500': bgColor }"
+      role="progressbar"
+      :style="styleBar"
+      :aria-valuenow="percentage"
     />
   </div>
 </template>
@@ -18,30 +18,30 @@ export default {
   props: {
     color: {
       type: String,
-      default: "teal"
+      default: "teal",
     },
     key: {
       type: Number,
-      default: null
+      default: null,
     },
     width: {
       type: Number,
-      default: 0
+      default: 0,
     },
     bgColor: {
       type: Boolean,
-      default: false
+      default: false,
     },
     percentage: {
       type: Number,
-      default: 0
+      default: 0,
     },
   },
   computed: {
     styleBar() {
-      return this.bgColor ? {width: `${this.width}%`} : {width: `0%`}
-    }
-  }
+      return this.bgColor ? { width: `${this.width}%` } : { width: `0%` };
+    },
+  },
 };
 </script>
 <style scoped>
