@@ -18,6 +18,7 @@
 
 <script>
 import ProgressBar from "@/components/ProgressBar";
+import { mapGetters } from "vuex";
 
 export default {
   name: "SubHeader",
@@ -32,29 +33,25 @@ export default {
       default: "",
     },
   },
-  data() {
-    return {
-      groups: this.$store.state.data,
-      answers: this.$store.state.answers,
-    };
-  },
   computed: {
+    ...mapGetters({
+      groups: "data",
+      answers: "answers",
+    }),
     isShowSubHeader() {
       return ["overview"].includes(this.$route.name);
     },
     titleCapitalize() {
-      return `${this.title.charAt(0).toLocaleUpperCase()}${this.title.slice(
-        1
-      )}`;
+      return `${this.title.charAt(0).toLocaleUpperCase()}${this.title.slice(1)}`;
     },
   },
   methods: {
-    getGroupProgressBarWidth(group) {
-      const answeredQuestions = group.questions
-        .map((question) => this.answers[group.fieldName][question.fieldName])
+    getGroupProgressBarWidth({ questions, fieldName }) {
+      const answeredQuestions = questions
+        .map((question) => this.answers[fieldName][question.fieldName])
         .filter((answer) => answer).length;
 
-      return ((answeredQuestions * 100) / group.questions.length).toFixed(0);
+      return ((answeredQuestions * 100) / questions.length).toFixed(0);
     },
   },
 };

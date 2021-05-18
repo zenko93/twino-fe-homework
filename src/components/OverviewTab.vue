@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "OverviewTab",
   props: {
@@ -35,11 +37,11 @@ export default {
   },
   data() {
     return {
-      answers: this.$store.state.answers,
       key: true,
     };
   },
   computed: {
+    ...mapGetters(["answers"]),
     symbol() {
       return this.key ? "- Show less" : "+ Show more";
     },

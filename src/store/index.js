@@ -75,5 +75,15 @@ export default new Vuex.Store({
       }
     },
   },
-  modules: {},
+  getters: {
+    data(state) {
+      return state.data;
+    },
+    answers(state) {
+      return state.answers;
+    },
+    amountOfGroups(state) {
+      return state.data.length - 1;
+    },
+  },
 });
