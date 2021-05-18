@@ -1,0 +1,28 @@
+@tailwind base;
+
+@layer base {
+    h1 {
+        @apply text-4xl;
+        @apply font-bold;
+        @apply text-blue-900;
+    }
+    h2 {
+        @apply text-2xl;
+        @apply font-bold;
+        @apply text-blue-900;
+    }
+    h3 {
+        @apply text-xl;
+        @apply text-blue-900;
+    }
+    a {
+        @apply text-blue-600 underline;
+    }
+    p {
+        @apply text-blue-900;
+    }
+}
+
+@tailwind components;
+
+@tailwind utilities;
