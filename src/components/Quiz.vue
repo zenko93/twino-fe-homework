@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="mb-3 font-bold">{{ quiz.question }}</h3>
-    <div v-for="answer in quiz.answers" :key="answer">
+    <div v-for="answer in quiz.answers" :key="answer + quiz.question">
       <div class="flex items-center mb-4">
         <input @click="setAnswer(answer)" :id="answer" type="radio" name="radio" class="hidden" />
         <label :for="answer" class="flex items-center cursor-pointer text-xl text-blue-900">

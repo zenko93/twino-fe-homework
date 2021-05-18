@@ -34,19 +34,17 @@ export default {
   },
   methods: {
     nextQuestion() {
-      if (this.numberOfQuiz === this.data[this.numberOfGroup].questions.length - 1 && this.numberOfGroup !== this.data.length - 1) {
+      const amountOfGroups = this.data.length - 1;
+      const amountOfQuestions = this.data[this.numberOfGroup].questions.length - 1;
+
+      if (this.numberOfQuiz === amountOfQuestions && this.numberOfGroup !== amountOfGroups) {
         this.numberOfGroup = this.numberOfGroup + 1;
         this.numberOfQuiz = 0;
-        this.pushProgressBar();
-      } else if (this.numberOfGroup !== this.data.length - 1 || this.numberOfQuiz !== this.data[this.numberOfGroup].questions.length - 1) {
+      } else if (this.numberOfGroup !== amountOfGroups || this.numberOfQuiz !== amountOfQuestions) {
         this.numberOfQuiz = this.numberOfQuiz + 1;
-        this.pushProgressBar();
       } else {
         this.$router.push('overview');
       }
-    },
-    pushProgressBar() {
-      this.width = this.width + 33;
     },
     previousQuestion() {
       if (this.numberOfQuiz === 0 && this.numberOfGroup !== 0) {
